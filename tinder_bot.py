@@ -18,8 +18,15 @@ class TinderBot():
         fb_btn = self.driver.find_element_by_xpath('//*[@id="q1654454959"]/div/div/div[1]/div/div[3]/span/div[2]/button')
         fb_btn.click()
         
+        #switch to login popup
+        base_window = self.driver.window_handles[0]
+        self.driver.switch_to_window(self.driver.window_handles[1])
+        
         
         
         #switch to login popup
         base_window = self.driver.window_handles[0]
         self.driver.switch_to_window(self.driver.window_handles[1])
+
+        email_in = self.driver.find_element_by_xpath('//*[@id="email"]')
+        email_in.send_keys('email@gmail.com')
