@@ -5,5 +5,6 @@ pip install selenium
 in secrets.py file change the variables:
 
  username = 'your_username'
+ 
  password = 'your_password'
 

@@ -4,6 +4,7 @@ from time import sleep
 from secrets import username, password
 
 class TinderBot():
+    
     def __init__(self):
         self.driver = webdriver.Chrome()
         
@@ -58,12 +59,15 @@ class TinderBot():
         popup_2 = self.driver.find_element_by_xpath('//*[@id="q1654454959"]/div/div/div/div/div[3]/button[1]')
         popup_2.click()
         
+        sleep(5)
+        
+
     def like(self):
-        like_btn = self.driver.find_element_by_xpath('//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/button[3]')
+        like_btn = self.driver.find_element_by_xpath('//*[@id="q-600306533"]/div/div[1]/div/main/div[1]/div/div/div[1]/div[1]/div/div[4]/div/div[4]/button')
         like_btn.click()
 
     def dislike(self):
-        dislike_btn = self.driver.find_element_by_xpath('//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/button[1]')
+        dislike_btn = self.driver.find_element_by_xpath('//*[@id="q-600306533"]/div/div[1]/div/main/div[1]/div/div/div[1]/div[1]/div/div[4]/div/div[2]/button')
         dislike_btn.click()
 
     def auto_swipe(self):
@@ -83,8 +87,11 @@ class TinderBot():
 
     def close_match(self):
         match_popup = self.driver.find_element_by_xpath('//*[@id="modal-manager-canvas"]/div/div/div[1]/div/div[3]/a')
-        match_popup.click()   
-        
+        match_popup.click()
+    
+                    
         
 bot = TinderBot()
 bot.login()
+sleep(5)
+bot.auto_swipe()
